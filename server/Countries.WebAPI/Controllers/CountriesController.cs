@@ -2,9 +2,11 @@
 using Countries.WebAPI.Models;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Countries.WebAPI.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class CountriesController : ApiController
     {
         private ICountriesRepository _countriesRepository;
