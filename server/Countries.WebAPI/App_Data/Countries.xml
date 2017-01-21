@@ -14,18 +14,4 @@
       <Name>Berlin</Name>
     </Capital>
   </Country>
-  <Country>
-    <Id>3</Id>
-    <Name>hhhh</Name>
-    <Capital>
-      <Name>rrrr</Name>
-    </Capital>
-  </Country>
-  <Country>
-    <Id>4</Id>
-    <Name>hhhh1</Name>
-    <Capital>
-      <Name>rrrr2</Name>
-    </Capital>
-  </Country>
 </Countries>
