@@ -1,10 +1,6 @@
 ﻿using Countries.WebAPI.Interfaces;
 using Countries.WebAPI.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Countries.WebAPI.Controllers
@@ -18,31 +14,24 @@ namespace Countries.WebAPI.Controllers
             _countriesRepository = countriesRepository;
         }
 
-        // GET: api/Countries
         public IEnumerable<Country> Get()
         {
             return _countriesRepository.GetAll();
         }
-
-        // GET: api/Countries/5
-        public string Get(int id)
+        
+        public Country Get(int id)
         {
-            return "value";
+            return _countriesRepository.GetById(id);
         }
 
-        // POST: api/Countries
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Country country)
         {
+            _countriesRepository.Add(country);
         }
 
-        // PUT: api/Countries/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Countries/5
         public void Delete(int id)
         {
+            _countriesRepository.Remove(id);
         }
     }
 }

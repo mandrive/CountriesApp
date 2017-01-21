@@ -6,6 +6,9 @@ namespace Countries.WebAPI.Models
     [Serializable]
     public class Country
     {
+        [XmlElement("Id")]
+        public int Id { get; set; }
+
         [XmlElement("Name")]
         public string Name { get; set; }
 

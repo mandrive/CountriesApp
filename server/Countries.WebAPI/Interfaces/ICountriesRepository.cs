@@ -6,8 +6,9 @@ namespace Countries.WebAPI.Interfaces
     public interface ICountriesRepository
     {
         IList<Country> GetAll();
+        Country GetById(int id);
         void Add(Country country);
-        void Remove(Country country);
+        void Remove(int id);
         void SaveChanges();
     }
 }

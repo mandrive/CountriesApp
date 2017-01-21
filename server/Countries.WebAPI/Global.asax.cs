@@ -18,7 +18,7 @@ namespace Countries.WebAPI
             var container = new Container();
             container.Options.DefaultScopedLifestyle = new WebApiRequestLifestyle();
 
-            container.Register<ICountriesRepository>(() => new CountriesRepository(HttpContext.Current.Server.MapPath("~/App_Data/Countries.xml")));
+            container.Register<ICountriesRepository>(() => new LocalXmlCountriesRepository(HttpContext.Current.Server.MapPath("~/App_Data/Countries.xml")));
 
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 
