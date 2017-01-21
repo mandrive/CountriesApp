@@ -4,17 +4,26 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Main from '../components/App';
 import CountriesList from '../components/CountriesList';
+import CountryDetails from '../components/CountryDetails';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.actions.fetchCountries();
+  }
   render() {
     const {actions, countries} = this.props;
 
     return (
-      <div>
-        <CountriesList
-          countries={this.props.countries.collection}
-          selectCountry={this.props.selectCountry}
-        />
+      <div className="row">
+        <div className="col col-lg-3">
+          <CountriesList
+            countries={this.props.countries.collection}
+            selectCountry={this.props.actions.selectCountry}
+          />
+        </div>
+        <div className="col col-lg-9">
+          <CountryDetails selectedCountry={this.props.countries.selected}/>
+        </div>
       </div>
       )
   }

@@ -6,16 +6,14 @@ import styles from './styles/countrydetails.cssmodule.scss';
 class CountryDetails extends React.Component {
 
   render() {
+    var countryDetails = this.props.selectedCountry && this.props.selectedCountry.id ? <div>Selected country!</div> : <h3>Select a country from list on the left</h3>
+
     return (
-      <div className="countrydetails-component" styleName="countrydetails-component">
-        Please edit src/components//CountryDetails.js to update this component!
+      <div className="countrydetails-component">
+        {countryDetails}
       </div>
     );
   }
 }
-
-CountryDetails.displayName = 'CountryDetails';
-CountryDetails.propTypes = {};
-CountryDetails.defaultProps = {};
 
 export default CountryDetails;
