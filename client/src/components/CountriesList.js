@@ -1,6 +1,6 @@
 import React from 'react';
 import cssmodules from 'react-css-modules';
-import styles from './countrieslist.cssmodule.scss';
+import styles from './styles/countrieslist.cssmodule.scss';
 
 @cssmodules(styles)
 class CountriesList extends React.Component {

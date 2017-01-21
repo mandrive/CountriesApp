@@ -1,22 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './components/App';
+import App from './containers/App';
+import { Provider } from 'react-redux';
+import configureStore from './stores';
+
+const store = configureStore();
 
 ReactDOM.render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
+  <Provider store={store}>
+    <AppContainer>
+      <App />
+    </AppContainer>
+  </Provider>,
   document.getElementById('app')
 );
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const NextApp = require('./components/App').default; // eslint-disable-line global-require
+  module.hot.accept('./containers/App', () => {
+    const NextApp = require('./containers/App').default; // eslint-disable-line global-require
     ReactDOM.render(
-      <AppContainer>
-        <NextApp />
-      </AppContainer>,
+      <Provider store={store}>
+        <AppContainer>
+          <NextApp />
+        </AppContainer>
+      </Provider>,
       document.getElementById('app')
     );
   });
