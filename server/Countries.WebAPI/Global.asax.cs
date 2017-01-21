@@ -1,10 +1,13 @@
-﻿using SimpleInjector;
+﻿using Countries.WebAPI.Interfaces;
+using Countries.WebAPI.Repositories;
+using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
+using System.Web;
 using System.Web.Http;
 
 namespace Countries.WebAPI
 {
-    public class WebApiApplication : System.Web.HttpApplication
+    public class WebApiApplication : HttpApplication
     {
         protected void Application_Start()
         {
@@ -13,10 +16,8 @@ namespace Countries.WebAPI
             var container = new Container();
             container.Options.DefaultScopedLifestyle = new WebApiRequestLifestyle();
 
-            // Register your types, for instance using the scoped lifestyle:
-            //container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
+            container.Register<ICountriesRepository>(() => new CountriesRepository(HttpContext.Current.Server.MapPath("~/App_Data/Countries.xml")));
 
-            // This is an extension method from the integration package.
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 
             container.Verify();

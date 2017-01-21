@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Countries.WebAPI.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,6 +10,13 @@ namespace Countries.WebAPI.Controllers
 {
     public class CountriesController : ApiController
     {
+        private ICountriesRepository _countriesRepository;
+
+        public CountriesController(ICountriesRepository countriesRepository)
+        {
+            _countriesRepository = countriesRepository;
+        }
+
         // GET: api/Countries
         public IEnumerable<string> Get()
         {
