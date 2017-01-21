@@ -25,7 +25,6 @@ function fetchingFailed(err) {
 
 function action() {
   return (dispatch) => {
-    debugger;
     dispatch(fetchingCountriesInProgress());
 
     axios.get('http://localhost:9555/api/countries')

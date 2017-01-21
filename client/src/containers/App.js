@@ -11,18 +11,24 @@ class App extends Component {
     this.props.actions.fetchCountries();
   }
   render() {
-    const {actions, countries} = this.props;
-
+    const {actions, countries } = this.props;
+    
     return (
-      <div className="row">
-        <div className="col col-lg-3">
-          <CountriesList
-            countries={this.props.countries.collection}
-            selectCountry={this.props.actions.selectCountry}
-          />
+      <div>
+        <div className="jumbotron">
+            <h1>#CountriesApp</h1>
         </div>
-        <div className="col col-lg-9">
-          <CountryDetails selectedCountry={this.props.countries.selected}/>
+        <div className="row">
+          
+          <div className="col col-lg-3">
+            <CountriesList
+              countries={countries.collection}
+              selectCountry={this.props.actions.selectCountry}
+            />
+          </div>
+          <div className="col col-lg-9">
+            <CountryDetails selectedCountry={countries.selected}/>
+          </div>
         </div>
       </div>
       )

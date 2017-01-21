@@ -4,18 +4,14 @@ import styles from './styles/country.cssmodule.scss';
 
 @cssmodules(styles)
 class Country extends React.Component {
-
   render() {
     return (
       <div className="country-component" styleName="country-component">
-        Please edit src/components//Country.js to update this component!
+        <span>{this.props.country.Name}</span>
+        <button className="btn btn-primary" onClick={() => {this.props.onSelect(this.props.country);}}>Show details</button>
       </div>
     );
   }
 }
-
-Country.displayName = 'Country';
-Country.propTypes = {};
-Country.defaultProps = {};
 
 export default Country;

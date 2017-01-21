@@ -9,7 +9,7 @@ class CountriesList extends React.Component {
 
   render() {
     var countries = this.props.countries && this.props.countries.length ? 
-        <ul>{this.props.countries.map(c => (<li><Country onSelect={this.props.selectCountry} /></li>))}</ul>
+        <ul>{this.props.countries.map(c => (<li key={c.Id}><Country country={c} onSelect={this.props.selectCountry} /></li>))}</ul>
         : <h2>No countries loaded</h2>;
 
     return (

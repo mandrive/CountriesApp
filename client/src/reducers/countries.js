@@ -32,7 +32,7 @@ function reducer(state = initialState, action) {
     case SELECT_COUNTRY:
      return {
        ...state,
-       selected: Object.assign({}, action.payload.selected)
+       selected: Object.assign({}, action.payload.selectedCountry)
      }
     default: {
       return state;

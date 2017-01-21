@@ -1,6 +1,5 @@
 import React from 'react';
 import YeomanImage from './YeomanImage';
-import './styles/app.css';
 
 class AppComponent extends React.Component {
 

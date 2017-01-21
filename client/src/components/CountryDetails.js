@@ -6,7 +6,7 @@ import styles from './styles/countrydetails.cssmodule.scss';
 class CountryDetails extends React.Component {
 
   render() {
-    var countryDetails = this.props.selectedCountry && this.props.selectedCountry.id ? <div>Selected country!</div> : <h3>Select a country from list on the left</h3>
+    var countryDetails = this.props.selectedCountry && this.props.selectedCountry.Id ? <div>Selected country!</div> : <h3>Select a country from list on the left</h3>
 
     return (
       <div className="countrydetails-component">
