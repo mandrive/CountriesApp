@@ -1,10 +1,11 @@
-import { FETCH_COUNTRIES_IN_PROGRESS, FETCH_COUNTRIES_SUCCEDED, FETCH_COUNTRIES_FAILED, SELECT_COUNTRY } from '../actions/const';
+import { FETCH_COUNTRIES_IN_PROGRESS, FETCH_COUNTRIES_SUCCEDED, FETCH_COUNTRIES_FAILED, SELECT_COUNTRY, ADD_COUNTRY_IN_PROGRESS, ADD_COUNTRY_SUCEDED, ADD_COUNTRY_FAILED } from '../actions/const';
 
 const initialState = {
   collection: [],
   selected: {},
   error: {},
-  isFetching: false  
+  isFetching: false,
+  addingInProgress: false
 };
 
 function reducer(state = initialState, action) {
@@ -33,6 +34,17 @@ function reducer(state = initialState, action) {
      return {
        ...state,
        selected: Object.assign({}, action.payload.selectedCountry)
+     }
+    case ADD_COUNTRY_IN_PROGRESS:
+     return {
+       ...state,
+       addingInProgress: true
+     }
+    case ADD_COUNTRY_SUCEDED:
+    case ADD_COUNTRY_FAILED:
+      return {
+       ...state,
+       addingInProgress: false
      }
     default: {
       return state;

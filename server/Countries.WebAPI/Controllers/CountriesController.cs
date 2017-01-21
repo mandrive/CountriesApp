@@ -26,14 +26,16 @@ namespace Countries.WebAPI.Controllers
             return _countriesRepository.GetById(id);
         }
 
-        public void Post([FromBody]Country country)
+        public void Post(Country country)
         {
             _countriesRepository.Add(country);
+            _countriesRepository.SaveChanges();
         }
 
         public void Delete(int id)
         {
             _countriesRepository.Remove(id);
+            _countriesRepository.SaveChanges();
         }
     }
 }

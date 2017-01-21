@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import CountriesList from '../components/CountriesList';
 import CountryDetails from '../components/CountryDetails';
+import AddCountryForm  from '../components/AddCountryForm';
 
 class App extends Component {
   componentDidMount() {
@@ -28,6 +29,12 @@ class App extends Component {
           </div>
           <div className="col col-lg-9">
             <CountryDetails selectedCountry={countries.selected}/>
+          </div>
+        </div>
+        <hr />
+        <div className="row">
+          <div className="col-lg-12">
+            <AddCountryForm onSubmit={this.props.actions.addCountry}/>
           </div>
         </div>
       </div>

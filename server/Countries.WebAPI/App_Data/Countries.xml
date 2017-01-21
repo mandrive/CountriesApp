@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0"?>
 <Countries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Country>
     <Id>1</Id>
@@ -12,6 +12,20 @@
     <Name>Germany</Name>
     <Capital>
       <Name>Berlin</Name>
+    </Capital>
+  </Country>
+  <Country>
+    <Id>3</Id>
+    <Name>hhhh</Name>
+    <Capital>
+      <Name>rrrr</Name>
+    </Capital>
+  </Country>
+  <Country>
+    <Id>4</Id>
+    <Name>hhhh1</Name>
+    <Capital>
+      <Name>rrrr2</Name>
     </Capital>
   </Country>
 </Countries>
