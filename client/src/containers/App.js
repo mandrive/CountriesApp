@@ -8,11 +8,13 @@ import CountriesList from '../components/CountriesList';
 class App extends Component {
   render() {
     const {actions, countries} = this.props;
-    //<Main actions={actions} countries={countries}/>;
 
     return (
       <div>
-        <CountriesList />
+        <CountriesList
+          countries={this.props.countries.collection}
+          selectCountry={this.props.selectCountry}
+        />
       </div>
       )
   }
