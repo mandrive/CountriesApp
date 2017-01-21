@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Countries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Country>
+    <Name>Poland</Name>
+    <Capital>
+      <Name>Warszawa</Name>
+    </Capital>
+  </Country>
+  <Country>
+    <Name>Germany</Name>
+    <Capital>
+      <Name>Berlin</Name>
+    </Capital>
+  </Country>
+</Countries>
