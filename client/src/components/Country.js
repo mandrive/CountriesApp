@@ -6,9 +6,9 @@ import styles from './styles/country.cssmodule.scss';
 class Country extends React.Component {
   render() {
     return (
-      <a href="#" className="list-group-item" onClick={(e) => { e.preventDefault(); this.props.onSelect(this.props.country);}}>
+      <button className={"list-group-item list-group-item-action " + (this.props.isActive ? "active" : "")} onClick={() => { this.props.onSelect(this.props.country);}}>
         {this.props.country.Name}
-      </a>
+      </button>
     );
   }
 }

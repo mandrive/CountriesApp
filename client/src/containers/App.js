@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { addCountry, selectCountry, fetchCountries } from '../actions/';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Main from '../components/App';
 import CountriesList from '../components/CountriesList';
 import CountryDetails from '../components/CountryDetails';
 
@@ -23,6 +22,7 @@ class App extends Component {
           <div className="col col-lg-3">
             <CountriesList
               countries={countries.collection}
+              selectedCountry={countries.selected}
               selectCountry={this.props.actions.selectCountry}
             />
           </div>
