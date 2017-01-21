@@ -137,7 +137,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51104</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51104/</IISUrl>
+          <IISUrl>http://localhost:9555/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

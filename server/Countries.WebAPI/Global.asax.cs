@@ -1,5 +1,7 @@
 ﻿using Countries.WebAPI.Interfaces;
 using Countries.WebAPI.Repositories;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using System.Web;
@@ -22,8 +24,16 @@ namespace Countries.WebAPI
 
             container.Verify();
 
-            GlobalConfiguration.Configuration.DependencyResolver =
-                new SimpleInjectorWebApiDependencyResolver(container);
+            GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
+
+            // let our controllers not return xml at all, only json is valid
+            var formatters = GlobalConfiguration.Configuration.Formatters;
+            formatters.Remove(formatters.XmlFormatter);
+
+            // ignore [Serializable] fields by json formatter, so no keys with backing fields will be shown on data returned by controllers
+            var serializerSettings = GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings;
+            var contractResolver = (DefaultContractResolver)serializerSettings.ContractResolver;
+            contractResolver.IgnoreSerializableAttribute = true;
         }
     }
 }

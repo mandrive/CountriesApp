@@ -1,4 +1,5 @@
 ﻿using Countries.WebAPI.Interfaces;
+using Countries.WebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,9 @@ namespace Countries.WebAPI.Controllers
         }
 
         // GET: api/Countries
-        public IEnumerable<string> Get()
+        public IEnumerable<Country> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _countriesRepository.GetAll();
         }
 
         // GET: api/Countries/5

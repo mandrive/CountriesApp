@@ -9,6 +9,6 @@ namespace Countries.WebAPI.Models
     public class CountriesCollection
     {
         [XmlElement("Country")]
-        public IList<Country> Countries { get; set; }
+        public List<Country> Countries { get; set; }
     }
 }
