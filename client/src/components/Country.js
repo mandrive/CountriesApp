@@ -6,10 +6,9 @@ import styles from './styles/country.cssmodule.scss';
 class Country extends React.Component {
   render() {
     return (
-      <div className="country-component" styleName="country-component">
-        <span>{this.props.country.Name}</span>
-        <button className="btn btn-primary" onClick={() => {this.props.onSelect(this.props.country);}}>Show details</button>
-      </div>
+      <a href="#" className="list-group-item" onClick={(e) => { e.preventDefault(); this.props.onSelect(this.props.country);}}>
+        {this.props.country.Name}
+      </a>
     );
   }
 }
