@@ -1,0 +1,9 @@
+{
+  "generator-react-webpack": {
+    "appName": "countries-ui",
+    "style": "scss",
+    "cssmodules": true,
+    "postcss": false,
+    "generatedWithVersion": 4
+  }
+}
